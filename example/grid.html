@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Grid example</title>
+		<link rel="stylesheet" media="screen" href="../js/vendor/handsontable/dist/jquery.handsontable.full.css">
+	</head>
+	<body>
+		<div style="width:50%;float:left">
+			<textarea id="handsontable"></textarea>
+			<button id="save">Zapisz</button>
+		</div>
+		<iframe id="html-test" src="grid.php" style="width:45%;float:right"></iframe>
+		<script type="text/javascript" src="../js/vendor/jquery/jquery.js"></script>
+		<script type="text/javascript" src="../js/vendor/handsontable/dist/jquery.handsontable.full.js"></script>
+		<script type="text/javascript" src="../js/twiggrideditable.js"></script>
+		<script type="text/javascript">
+			$.get('data.json', function(data){
+				$('#handsontable').val(data);
+				$('#handsontable').twiggrideditable();
+				$('#save').on('click', function(){
+					$.post('save.php', {data: $('#handsontable').val()}, function(data){
+						$('#html-test').attr( 'src', function ( i, val ) { return val; });
+					})
+				});
+			}, 'html');
+		</script>
+	</body>
+</html>

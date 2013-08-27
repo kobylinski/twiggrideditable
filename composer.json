@@ -1,0 +1,12 @@
+{
+    "name": "kobylinski/twiggrideditable",
+    "description": "Twig Grid Editable",
+    "homepage":"https://github.com/kobylinski/twiggrideditable",
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.3.3",
+        "twig/twig": "1.14.*@dev"
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,8 @@
+{
+  "name" : "Twig Grid Editable",
+  "version": "0.1",
+  "dependencies" : {
+  	"jquery": "1.x",
+  	"handsontable": "x"
+  }
+}
